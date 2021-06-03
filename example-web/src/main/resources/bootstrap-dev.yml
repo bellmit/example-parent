@@ -1,0 +1,31 @@
+server:
+  port: 9999
+logging:
+  level:
+    com: DEBUG
+spring:
+  application:
+    name: example-web
+  jackson:
+    date-format: 'yyyy-MM-dd HH:mm:ss'
+  datasource:
+    url: jdbc:mysql://192.168.126.105:3306/example?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    ##老的数据库连接驱动写法
+    ##driverClassName: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#关闭驼峰式命名
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+#rocketmq配置
+rocketmq:
+  name-server: 192.168.31.132:9876
+  producer:
+    group: my-producer-group
+    groupName: my-producer-group
